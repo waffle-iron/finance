@@ -1,24 +1,29 @@
-<div class="nav" role="navigation">
-    <ul>
-        <li><a ui-sref="index" class="home">Home</a></li>
-        <li><a class="list" ui-sref="account.list" class="list">Account List</a></li>
-        <li><a class="create" ui-sref="account.create" class="create">New Account</a></li>
-    </ul>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <a ui-sref="index" class="btn btn-default">Home</a>
+        <a ui-sref="account.list" class="btn btn-default">Account List</a>
+        <a ui-sref="account.create" class="btn btn-default">New Account</a>
+    </div>
 </div>
-<div id="show-part" class="content scaffold-show" role="main">
+
+<div id="show-account">
     <h1>Show Account</h1>
-    <ol class="property-list account">
-        <li class="fieldcontain">
-            <span id="name-label" class="property-label">Name</span>
-            <div class="property-value" aria-labelledby="name-label">
-                <span>{{vm.account.name}}</span>
-            </div>
-        </li>
-    </ol>
+
+    <dl class="dl-horizontal account">
+        <dt>Name</dt>
+        <dd>{{vm.account.name}}</dd>
+    </dl>
+
     <form ng-submit="vm.delete()">
-        <fieldset class="buttons">
-            <a class="edit" ui-sref="account.edit({id: vm.account.id})">Edit</a>
-            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');"/>
+        <fieldset>
+
         </fieldset>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <a class="edit btn btn-default" ui-sref="account.edit({id: vm.account.id})">Edit</a>
+                <input class="delete btn btn-danger" type="submit" value="Delete"
+                       onclick="return confirm('Are you sure?');"/>
+            </div>
+        </div>
     </form>
 </div>

@@ -4,8 +4,9 @@ angular
     .module("finance.exchange")
     .controller("ExchangeListController", ExchangeListController);
 
-function ExchangeListController(Exchange) {
+function ExchangeListController(Exchange, $state) {
     var vm = this;
+    vm.go = $state.go;
 
     var max = 10, offset = 0;
 

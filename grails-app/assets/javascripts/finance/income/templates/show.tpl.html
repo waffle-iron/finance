@@ -1,34 +1,35 @@
-<div class="nav" role="navigation">
-    <ul>
-        <li><a ui-sref="index" class="home">Home</a></li>
-        <li><a class="list" ui-sref="income.list" class="list">Income List</a></li>
-        <li><a class="create" ui-sref="income.create" class="create">New Income</a></li>
-    </ul>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <a ui-sref="index" class="btn btn-default">Home</a>
+        <a ui-sref="income.list" class="btn btn-default">Income List</a>
+        <a ui-sref="income.create" class="btn btn-default">New Income</a>
+    </div>
 </div>
-<div id="show-part" class="content scaffold-show" role="main">
+
+<div id="show-income" class="content scaffold-show" role="main">
     <h1>Show Income</h1>
-    <ol class="property-list income">
-        <li class="fieldcontain">
-            <span id="operations-label" class="property-label">Operations</span>
-            <div class="property-value" aria-labelledby="operations-label">
-                <ul>
-                    <li ng-repeat="operation in vm.income.operations">
-                        <a ui-sref="operation.show({id: operation.id})">{{operation.toString()}}</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-        <li class="fieldcontain">
-            <span id="description-label" class="property-label">Description</span>
-            <div class="property-value" aria-labelledby="description-label">
-                <span>{{vm.income.description}}</span>
-            </div>
-        </li>
-    </ol>
+
+    <dl class="dl-horizontal">
+        <dt>Operations</dt>
+        <dd>
+            <a class="label label-default"
+               ng-repeat="operation in vm.income.operations"
+               ui-sref="operation.show({id: operation.id})">
+                {{operation.toString()}}
+            </a>
+        </dd>
+        <dt>Description</dt>
+        <dd>{{vm.income.description}}</dd>
+    </dl>
+
     <form ng-submit="vm.delete()">
-        <fieldset class="buttons">
-            <a class="edit" ui-sref="income.edit({id: vm.income.id})">Edit</a>
-            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');"/>
-        </fieldset>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <a class="edit btn btn-default"
+                   ui-sref="income.edit({id: vm.income.id})">Edit</a>
+                <input class="delete btn btn-danger" type="submit" value="Delete"
+                       onclick="return confirm('Are you sure?');"/>
+            </div>
+        </div>
     </form>
 </div>

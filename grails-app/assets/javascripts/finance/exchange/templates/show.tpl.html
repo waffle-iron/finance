@@ -1,34 +1,35 @@
-<div class="nav" role="navigation">
-    <ul>
-        <li><a ui-sref="index" class="home">Home</a></li>
-        <li><a class="list" ui-sref="exchange.list" class="list">Exchange List</a></li>
-        <li><a class="create" ui-sref="exchange.create" class="create">New Exchange</a></li>
-    </ul>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <a ui-sref="index" class="btn btn-default">Home</a>
+        <a ui-sref="exchange.list" class="btn btn-default">Exchange List</a>
+        <a ui-sref="exchange.create" class="btn btn-default">New Exchange</a>
+    </div>
 </div>
-<div id="show-part" class="content scaffold-show" role="main">
+
+<div id="show-exchange" class="content scaffold-show" role="main">
     <h1>Show Exchange</h1>
-    <ol class="property-list exchange">
-        <li class="fieldcontain">
-            <span id="operations-label" class="property-label">Operations</span>
-            <div class="property-value" aria-labelledby="operations-label">
-                <ul>
-                    <li ng-repeat="operation in vm.exchange.operations">
-                        <a ui-sref="operation.show({id: operation.id})">{{operation.toString()}}</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-        <li class="fieldcontain">
-            <span id="description-label" class="property-label">Description</span>
-            <div class="property-value" aria-labelledby="description-label">
-                <span>{{vm.exchange.description}}</span>
-            </div>
-        </li>
-    </ol>
+
+    <dl class="dl-horizontal">
+        <dt>Operations</dt>
+        <dd>
+            <a class="label label-default"
+               ng-repeat="operation in vm.exchange.operations"
+               ui-sref="operation.show({id: operation.id})">
+                {{operation.toString()}}
+            </a>
+        </dd>
+        <dt>Description</dt>
+        <dd>{{vm.exchange.description}}</dd>
+    </dl>
+
     <form ng-submit="vm.delete()">
-        <fieldset class="buttons">
-            <a class="edit" ui-sref="exchange.edit({id: vm.exchange.id})">Edit</a>
-            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');"/>
-        </fieldset>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <a class="edit btn btn-default"
+                   ui-sref="exchange.edit({id: vm.exchange.id})">Edit</a>
+                <input class="delete btn btn-danger" type="submit" value="Delete"
+                       onclick="return confirm('Are you sure?');"/>
+            </div>
+        </div>
     </form>
 </div>

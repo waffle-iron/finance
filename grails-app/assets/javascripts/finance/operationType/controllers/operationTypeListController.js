@@ -4,8 +4,9 @@ angular
     .module("finance.operationType")
     .controller("OperationTypeListController", OperationTypeListController);
 
-function OperationTypeListController(OperationType) {
+function OperationTypeListController(OperationType, $state) {
     var vm = this;
+    vm.go = $state.go;
 
     var max = 10, offset = 0;
 

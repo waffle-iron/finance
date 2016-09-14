@@ -4,8 +4,9 @@ angular
     .module("finance.expense")
     .controller("ExpenseListController", ExpenseListController);
 
-function ExpenseListController(Expense) {
+function ExpenseListController(Expense, $state) {
     var vm = this;
+    vm.go = $state.go;
 
     var max = 10, offset = 0;
 

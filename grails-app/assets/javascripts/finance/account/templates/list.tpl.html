@@ -1,12 +1,14 @@
-<div class="nav" role="navigation">
-    <ul>
-        <li><a ui-sref="index" class="home">Home</a></li>
-        <li><a ui-sref="account.create" class="create">New Account</a></li>
-    </ul>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <a ui-sref="index" class="btn btn-default">Home</a>
+        <a ui-sref="account.create" class="btn btn-default">New Account</a>
+    </div>
 </div>
-<div id="list-account" class="content scaffold-list" role="main">
+
+<div id="list-account">
     <h1>Account List</h1>
-    <table>
+
+    <table class="table">
         <thead>
         <tr>
             <th>Id</th>
@@ -14,17 +16,11 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="account in vm.accountList">
-            <td>
-                <a ui-sref="account.show({id: account.id})">{{account.id}}</a>
-            </td>
-            <td>
-                <span>{{account.name}}</span>
-            </td>
+        <tr ng-repeat="account in vm.accountList"
+            ng-click="vm.go('account.show', {id: account.id})">
+            <td>{{account.id}}</td>
+            <td>{{account.name}}</td>
         </tr>
         </tbody>
     </table>
-    <!--    <div class="pagination">
-            <g:paginate total="${partCount ?: 0}" />
-        </div>-->
 </div>

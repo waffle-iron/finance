@@ -1,12 +1,14 @@
-<div class="nav" role="navigation">
-    <ul>
-        <li><a ui-sref="index" class="home">Home</a></li>
-        <li><a ui-sref="operation.create" class="create">New Operation</a></li>
-    </ul>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <a ui-sref="index" class="btn btn-default">Home</a>
+        <a ui-sref="operation.create" class="btn btn-default">New Operation</a>
+    </div>
 </div>
-<div id="list-operation" class="content scaffold-list" role="main">
+
+<div id="list-operation">
     <h1>Operation List</h1>
-    <table>
+
+    <table class="table">
         <thead>
         <tr>
             <th>Id</th>
@@ -18,29 +20,27 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="operation in vm.operationList">
+        <tr ng-repeat="operation in vm.operationList"
+            ng-click="vm.go('operation.show', {id: operation.id})">
+            <td>{{operation.id}}</td>
             <td>
-                <a ui-sref="operation.show({id: operation.id})">{{operation.id}}</a>
+                <a class="label label-default" ui-sref="account.show({id: operation.credit.id})">
+                    {{operation.credit.toString()}}
+                </a>
+            </td>
+            <td>{{operation.description}}</td>
+            <td>
+                <a class="label label-default" ui-sref="operationType.show({id: operation.type.id})">
+                    {{operation.type.toString()}}
+                </a>
             </td>
             <td>
-                <a ui-sref="account.show({id: operation.credit.id})">{{operation.credit.toString()}}</a>
+                <a class="label label-default" ui-sref="account.show({id: operation.debit.id})">
+                    {{operation.debit.toString()}}
+                </a>
             </td>
-            <td>
-                <span>{{operation.description}}</span>
-            </td>
-            <td>
-                <a ui-sref="operationType.show({id: operation.type.id})">{{operation.type.toString()}}</a>
-            </td>
-            <td>
-                <a ui-sref="account.show({id: operation.debit.id})">{{operation.debit.toString()}}</a>
-            </td>
-            <td>
-                <span>{{operation.decimal}}</span>
-            </td>
+            <td>{{operation.decimal}}</td>
         </tr>
         </tbody>
     </table>
-    <!--    <div class="pagination">
-            <g:paginate total="${partCount ?: 0}" />
-        </div>-->
 </div>

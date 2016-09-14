@@ -4,8 +4,9 @@ angular
     .module("finance.income")
     .controller("IncomeListController", IncomeListController);
 
-function IncomeListController(Income) {
+function IncomeListController(Income, $state) {
     var vm = this;
+    vm.go = $state.go;
 
     var max = 10, offset = 0;
 

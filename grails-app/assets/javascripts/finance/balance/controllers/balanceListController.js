@@ -4,8 +4,9 @@ angular
     .module("finance.balance")
     .controller("BalanceListController", BalanceListController);
 
-function BalanceListController(Balance) {
+function BalanceListController(Balance, $state) {
     var vm = this;
+    vm.go = $state.go;
 
     var max = 10, offset = 0;
 

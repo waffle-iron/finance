@@ -1,21 +1,23 @@
-<fieldset class="form">
-    <div class="fieldcontain required">
-        <label for="amount">Amount
-            <span class="required-indicator">*</span>
+<fieldset>
+    <div class="form-group required">
+        <label for="amount">
+            Amount <span class="required-indicator">*</span>
         </label>
-        <input required="" name="amount" id="amount" ng-model="vm.balance.amount" type="number" step="any"/>
+        <input class="form-control" required="" name="amount" id="amount" ng-model="vm.balance.amount" type="number"
+               step="any"/>
     </div>
-    <div class="fieldcontain required">
-        <label for="description">Description
-            <span class="required-indicator">*</span>
+    <div class="form-group required">
+        <label for="description">
+            Description <span class="required-indicator">*</span>
         </label>
-        <input required="" name="description" id="description" ng-model="vm.balance.description" type="text"/>
+        <input class="form-control" required="" name="description" id="description" ng-model="vm.balance.description"
+               type="text"/>
     </div>
-    <div class="fieldcontain required">
-        <label for="account">Account
-            <span class="required-indicator">*</span>
+    <div class="form-group required">
+        <label for="account">
+            Account <span class="required-indicator">*</span>
         </label>
-        <select required="" name="account" id="account" ng-model="vm.balance.account"
+        <select class="form-control" required="" name="account" id="account" ng-model="vm.balance.account"
                 ng-options="account as account.name for account in vm.accountList track by account.id"></select>
     </div>
 </fieldset>

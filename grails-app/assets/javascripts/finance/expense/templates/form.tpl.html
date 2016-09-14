@@ -1,14 +1,15 @@
-<fieldset class="form">
-    <div class="fieldcontain">
+<fieldset>
+    <div class="form-group">
         <label for="operations">Operations</label>
-        <select name="operations" id="operations" ng-model="vm.expense.operations"
+        <select class="form-control" name="operations" id="operations" ng-model="vm.expense.operations"
                 ng-options="operation.id as operation for operation in vm.operationList track by operation.id"
                 multiple=""></select>
     </div>
-    <div class="fieldcontain required">
+    <div class="form-group required">
         <label for="description">Description
             <span class="required-indicator">*</span>
         </label>
-        <input required="" name="description" id="description" ng-model="vm.expense.description" type="text"/>
+        <input class="form-control" required="" name="description" id="description" ng-model="vm.expense.description"
+               type="text"/>
     </div>
 </fieldset>

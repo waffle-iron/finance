@@ -1,21 +1,26 @@
-<div class="nav" role="navigation">
-    <ul>
-        <li><a ui-sref="index" class="home">Home</a></li>
-        <li><a ui-sref="account.list" class="list">Account List</a></li>
-    </ul>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <a ui-sref="index" class="btn btn-default">Home</a>
+        <a ui-sref="account.list" class="btn btn-default">Account List</a>
+    </div>
 </div>
-<div id="edit-account" class="content scaffold-edit" role="main">
+
+<div id="edit-account">
     <h1>Edit Account</h1>
-    <ul class="errors" role="alert" ng-if="vm.errors">
-        <li ng-repeat="error in vm.errors">{{error.message}}</li>
-    </ul>
+
+    <div class="alert alert-danger alert-dismissable"
+         role="alert"
+         ng-if="vm.errors"
+         ng-repeat="error in vm.errors">
+        {{error.message}}
+    </div>
 
     <form name="updateAccount" ng-submit="vm.updateAccount()">
-        <fieldset class="form">
-            <ng-include src="'/finance/account/form.html'"></ng-include>
-        </fieldset>
-        <fieldset class="buttons">
-            <input type="submit" class="save" value="Update"/>
-        </fieldset>
+        <ng-include src="'/finance/account/form.html'"></ng-include>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <input type="submit" name="update" class="btn btn-primary" value="Update"/>
+            </div>
+        </div>
     </form>
 </div>
