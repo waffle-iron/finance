@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+        flatDir name: 'libs', dirs: "$projectDir/libs"
         maven { url "https://repo.grails.org/grails/core" }
     }
     dependencies {
@@ -27,6 +28,7 @@ apply plugin:"asset-pipeline"
 apply plugin:"org.grails.plugins.views-json"
 
 repositories {
+    flatDir name: 'libs', dirs: "$projectDir/libs"
     mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
 }
@@ -59,7 +61,7 @@ dependencies {
     compile "org.grails:grails-logging"
     compile "org.grails.plugins:cache"
     compile "org.grails:grails-plugin-gsp"
-    compile "org.grails.plugins:angular-scaffolding:1.0.0.RC3"
+    compile "org.grails.plugins:angular-scaffolding:1.0.0.LOCAL-SNAPSHOT"
     compile "org.grails.plugins:hibernate5"
     compile "org.hibernate:hibernate-core:5.1.1.Final"
     compile "org.hibernate:hibernate-ehcache:5.1.1.Final"
