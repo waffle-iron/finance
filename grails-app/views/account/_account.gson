@@ -1,0 +1,7 @@
+import finance.Account
+
+model {
+    Account account
+}
+
+json g.render(account)

@@ -6,7 +6,7 @@ angular
 
 function applicationDataFactory($http) {
     return {
-        get: function() {
+        get: function () {
             return $http({method: "GET", url: "application"});
         }
     }

@@ -43,7 +43,7 @@ function httpRequestInterceptor(contextPath) {
             }
             return config;
         },
-        response: function(response) {
+        response: function (response) {
             convertToDate(response.data);
             return response;
         }

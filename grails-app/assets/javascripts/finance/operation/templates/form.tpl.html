@@ -1,0 +1,33 @@
+<fieldset class="form">
+    <div class="fieldcontain">
+        <label for="credit">Credit</label>
+        <select name="credit" id="credit" ng-model="vm.operation.credit"
+                ng-options="account for account in vm.accountList track by account.id"></select>
+    </div>
+    <div class="fieldcontain required">
+        <label for="description">Description
+            <span class="required-indicator">*</span>
+        </label>
+        <input required="" name="description" id="description" ng-model="vm.operation.description" type="text"/>
+    </div>
+    <div class="fieldcontain required">
+        <label for="type">Type
+            <span class="required-indicator">*</span>
+        </label>
+        <select required="" name="type" id="type" ng-model="vm.operation.type"
+                ng-options="operationType for operationType in vm.operationTypeList track by operationType.id"></select>
+    </div>
+    <div class="fieldcontain required">
+        <label for="debit">Debit
+            <span class="required-indicator">*</span>
+        </label>
+        <select required="" name="debit" id="debit" ng-model="vm.operation.debit"
+                ng-options="account for account in vm.accountList track by account.id"></select>
+    </div>
+    <div class="fieldcontain required">
+        <label for="decimal">Decimal
+            <span class="required-indicator">*</span>
+        </label>
+        <input required="" name="decimal" id="decimal" ng-model="vm.operation.decimal" type="number" step="any"/>
+    </div>
+</fieldset>

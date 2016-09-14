@@ -14,7 +14,7 @@ angular.module("finance.index", [
     "ui.bootstrap.collapse",
     "ui.router"
 ])
-.config(config);
+    .config(config);
 
 function config($stateProvider, $urlRouterProvider) {
     $stateProvider

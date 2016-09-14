@@ -1,0 +1,38 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="balance.create" class="create">New Balance</a></li>
+    </ul>
+</div>
+<div id="list-balance" class="content scaffold-list" role="main">
+    <h1>Balance List</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Account</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="balance in vm.balanceList">
+            <td>
+                <a ui-sref="balance.show({id: balance.id})">{{balance.id}}</a>
+            </td>
+            <td>
+                <span>{{balance.amount}}</span>
+            </td>
+            <td>
+                <span>{{balance.description}}</span>
+            </td>
+            <td>
+                <a ui-sref="account.show({id: balance.account.id})">{{balance.account.toString()}}</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>

@@ -1,0 +1,7 @@
+import finance.OperationType
+
+model {
+    OperationType operationType
+}
+
+json g.render(operationType)

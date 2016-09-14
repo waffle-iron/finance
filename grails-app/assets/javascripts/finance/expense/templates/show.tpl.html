@@ -1,0 +1,34 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a class="list" ui-sref="expense.list" class="list">Expense List</a></li>
+        <li><a class="create" ui-sref="expense.create" class="create">New Expense</a></li>
+    </ul>
+</div>
+<div id="show-part" class="content scaffold-show" role="main">
+    <h1>Show Expense</h1>
+    <ol class="property-list expense">
+        <li class="fieldcontain">
+            <span id="operations-label" class="property-label">Operations</span>
+            <div class="property-value" aria-labelledby="operations-label">
+                <ul>
+                    <li ng-repeat="operation in vm.expense.operations">
+                        <a ui-sref="operation.show({id: operation.id})">{{operation.toString()}}</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="fieldcontain">
+            <span id="description-label" class="property-label">Description</span>
+            <div class="property-value" aria-labelledby="description-label">
+                <span>{{vm.expense.description}}</span>
+            </div>
+        </li>
+    </ol>
+    <form ng-submit="vm.delete()">
+        <fieldset class="buttons">
+            <a class="edit" ui-sref="expense.edit({id: vm.expense.id})">Edit</a>
+            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');"/>
+        </fieldset>
+    </form>
+</div>

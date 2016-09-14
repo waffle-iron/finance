@@ -1,0 +1,8 @@
+import finance.Exchange
+
+model {
+    Iterable<Exchange> exchangeList
+}
+
+json tmpl.exchange(exchangeList ?: [])
+

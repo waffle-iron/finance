@@ -1,0 +1,8 @@
+import finance.Account
+
+model {
+    Iterable<Account> accountList
+}
+
+json tmpl.account(accountList ?: [])
+

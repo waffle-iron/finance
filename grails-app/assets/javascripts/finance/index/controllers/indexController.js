@@ -9,11 +9,11 @@ function IndexController(applicationDataFactory, contextPath, $state) {
 
     vm.contextPath = contextPath;
 
-    applicationDataFactory.get().then(function(response) {
+    applicationDataFactory.get().then(function (response) {
         vm.applicationData = response.data;
     });
 
-    vm.stateExists = function(name) {
+    vm.stateExists = function (name) {
         return $state.get(name) != null;
     };
 

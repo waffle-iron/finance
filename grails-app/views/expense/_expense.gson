@@ -1,0 +1,7 @@
+import finance.Expense
+
+model {
+    Expense expense
+}
+
+json g.render(expense)

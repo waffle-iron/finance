@@ -1,0 +1,30 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="operationType.create" class="create">New OperationType</a></li>
+    </ul>
+</div>
+<div id="list-operationType" class="content scaffold-list" role="main">
+    <h1>OperationType List</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="operationType in vm.operationTypeList">
+            <td>
+                <a ui-sref="operationType.show({id: operationType.id})">{{operationType.id}}</a>
+            </td>
+            <td>
+                <span>{{operationType.name}}</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>

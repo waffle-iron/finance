@@ -1,0 +1,14 @@
+<fieldset class="form">
+    <div class="fieldcontain">
+        <label for="operations">Operations</label>
+        <select name="operations" id="operations" ng-model="vm.income.operations"
+                ng-options="operation.id as operation for operation in vm.operationList track by operation.id"
+                multiple=""></select>
+    </div>
+    <div class="fieldcontain required">
+        <label for="description">Description
+            <span class="required-indicator">*</span>
+        </label>
+        <input required="" name="description" id="description" ng-model="vm.income.description" type="text"/>
+    </div>
+</fieldset>

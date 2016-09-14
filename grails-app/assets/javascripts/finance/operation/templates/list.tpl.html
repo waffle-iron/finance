@@ -1,0 +1,46 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="operation.create" class="create">New Operation</a></li>
+    </ul>
+</div>
+<div id="list-operation" class="content scaffold-list" role="main">
+    <h1>Operation List</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Credit</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Debit</th>
+            <th>Decimal</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="operation in vm.operationList">
+            <td>
+                <a ui-sref="operation.show({id: operation.id})">{{operation.id}}</a>
+            </td>
+            <td>
+                <a ui-sref="account.show({id: operation.credit.id})">{{operation.credit.toString()}}</a>
+            </td>
+            <td>
+                <span>{{operation.description}}</span>
+            </td>
+            <td>
+                <a ui-sref="operationType.show({id: operation.type.id})">{{operation.type.toString()}}</a>
+            </td>
+            <td>
+                <a ui-sref="account.show({id: operation.debit.id})">{{operation.debit.toString()}}</a>
+            </td>
+            <td>
+                <span>{{operation.decimal}}</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>

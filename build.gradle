@@ -76,6 +76,9 @@ dependencies {
     testCompile "org.grails:grails-datastore-rest-client"
     testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+
+    compile 'org.grails.plugins:postgresql-extensions:4.6.6'
+    provided 'org.postgresql:postgresql:9.4-1203-jdbc4'
 }
 clientDependencies {
     npm {
