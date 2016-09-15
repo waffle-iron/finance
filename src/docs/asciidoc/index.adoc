@@ -1,0 +1,9 @@
+= My Finance
+Max Serebryanskiy <maxim.serebryanskiy@icloud.com>
+
+== Introduction
+
+* Expense
+* Income
+
+include::installation/index.adoc[]
