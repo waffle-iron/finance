@@ -2,6 +2,7 @@ buildscript {
     repositories {
         flatDir name: 'libs', dirs: "$projectDir/libs"
         maven { url "https://repo.grails.org/grails/core" }
+        jcenter()
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
@@ -11,6 +12,7 @@ buildscript {
         classpath "org.grails.plugins:hibernate5:6.0.0.RC1"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.11.1"
         classpath "org.grails.plugins:views-gradle:1.1.0.RC2"
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
     }
 }
 
@@ -26,6 +28,7 @@ apply plugin:"com.craigburke.karma"
 apply plugin:"com.craigburke.client-dependencies"
 apply plugin:"asset-pipeline"
 apply plugin:"org.grails.plugins.views-json"
+apply plugin: 'org.asciidoctor.convert'
 
 repositories {
     flatDir name: 'libs', dirs: "$projectDir/libs"
@@ -120,4 +123,8 @@ karma {
 assets {
     minifyJs = true
     minifyCss = true
+}
+
+asciidoctor {
+    logDocuments = true
 }
