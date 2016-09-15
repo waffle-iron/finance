@@ -1,15 +1,48 @@
 <fieldset>
-    <div class="form-group">
-        <label for="operations">Operations</label>
-        <select class="form-control" name="operations" id="operations" ng-model="vm.expense.operations"
-                ng-options="operation.id as operation for operation in vm.operationList track by operation.id"
-                multiple=""></select>
-    </div>
+    <!--<div class="form-group">-->
+    <!--<label for="operations">Operations</label>-->
+    <!--<select class="form-control" name="operations" id="operations" ng-model="vm.expense.operations"-->
+    <!--ng-options="operation.id as operation for operation in vm.operationList track by operation.id"-->
+    <!--multiple=""></select>-->
+    <!--</div>-->
     <div class="form-group required">
         <label for="description">Description
             <span class="required-indicator">*</span>
         </label>
         <input class="form-control" required="" name="description" id="description" ng-model="vm.expense.description"
                type="text"/>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-condensed">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Debit</th>
+                    <th>Credit</th>
+                    <th>Amount</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="operation in vm.expense.operations">
+                    <td>
+                        <a class="btn btn-link" ng-click="vm.removeOperation(operation)">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </a>
+                    </td>
+                    <td>{{operation.id}}</td>
+                    <td>{{operation.description}}</td>
+                    <td>{{operation.type}}</td>
+                    <td>{{operation.debit}}</td>
+                    <td>{{operation.credit}}</td>
+                    <td>{{operation.decimal}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <a class="btn btn-default" ng-click="vm.addOperation()">Add</a>
+        </div>
     </div>
 </fieldset>

@@ -1,5 +1,6 @@
 //= wrapped
 //= require /angular/angular
+//= require /angular/ui-bootstrap-tpls
 //= require /finance/core/finance.core
 //= require /finance/index/finance.index
 //= require /finance/account/finance.account
@@ -19,5 +20,6 @@ angular.module("finance", [
     "finance.operationType",
     "finance.expense",
     "finance.income",
-    "finance.exchange"
+    "finance.exchange",
+    "ui.bootstrap"
 ]);

@@ -1,20 +1,28 @@
-<div id="controllers">
-    <h1>
-        Available Controllers:
-    </h1>
-    <div>
-        <div class="col-md-6 ">
-            <a ng-repeat-start="c in indexCtrl.applicationData.controllers | orderBy:'name'"
-               ng-if="!indexCtrl.stateExists(c.logicalPropertyName+'.list')"
-               ng-href="{{indexCtrl.contextPath}}/{{c.logicalPropertyName}}"
-               class="btn btn-default btn-block">
-                {{c.name}}
-            </a>
-            <a ng-repeat-end ng-if="indexCtrl.stateExists(c.logicalPropertyName+'.list')"
-               ui-sref="{{c.logicalPropertyName}}.list"
-               class="btn btn-default btn-block">
-                {{c.name}}
-            </a>
-        </div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <a ui-sref="income.create" class="btn btn-default">New Income</a>
+        <a ui-sref="expense.create" class="btn btn-default">New Expense</a>
+        <a ui-sref="exchange.create" class="btn btn-default">New Exchange</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 col-xs-12" ng-controller="IncomeListController as vm">
+        <ng-include src="'/finance/income/list.html'"></ng-include>
+    </div>
+    <div class="col-md-4 col-xs-12" ng-controller="ExpenseListController as vm">
+        <ng-include src="'/finance/expense/list.html'"></ng-include>
+    </div>
+    <div class="col-md-4 col-xs-12" ng-controller="ExchangeListController as vm">
+        <ng-include src="'/finance/exchange/list.html'"></ng-include>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <a ng-repeat="c in indexCtrl.applicationData.controllers | orderBy:'name'"
+           ng-if="indexCtrl.stateExists(c.logicalPropertyName+'.list')"
+           ui-sref="{{c.logicalPropertyName}}.list"
+           class="btn btn-default">
+            {{c.name}}
+        </a>
     </div>
 </div>
