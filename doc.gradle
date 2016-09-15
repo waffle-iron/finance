@@ -1,0 +1,34 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+apply plugin: 'org.asciidoctor.convert'
+apply plugin: 'war'
+
+war {
+    baseName = 'asciidoc'
+    webAppDirName = "$buildDir/asciidoc/html5"
+    destinationDir = file("$buildDir/asciidoc")
+}
+
+asciidoctor {
+    logDocuments = true
+}
+
+war.dependsOn asciidoctor
+
+// TODO add task deploy to tomcat
