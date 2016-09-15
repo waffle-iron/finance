@@ -128,3 +128,5 @@ assets {
 asciidoctor {
     logDocuments = true
 }
+
+// TODO add task for pack asciidoc to war and deploy to tomcat
