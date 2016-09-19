@@ -9,5 +9,9 @@ build/
 .project
 .settings
 .classpath
+deploy_rsa
+deploy_rsa.pub
+node_modules/
+grails-app/assets/vendor/
 *.db
 node_modules/
