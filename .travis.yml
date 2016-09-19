@@ -4,7 +4,7 @@ jdk:
 addons:
     ssh_known_hosts: serebryanskiy.site
 before_install:
-    - openssl aes-256-cbc -K $encrypted_0dc519c2358e_key -iv $encrypted_0dc519c2358e_iv -in deploy_rsa.enc -out deploy_rsa -d
+    - openssl aes-256-cbc -K $encrypted_0e03e4d6fca5_key -iv $encrypted_0e03e4d6fca5_iv -in deploy_rsa.enc -out deploy_rsa -d
     - ls $TRAVIS_BUILD_DIR
 before_deploy:
     - eval "$(ssh-agent -s)"
