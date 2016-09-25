@@ -1,15 +1,16 @@
 package finance
 
+import java.time.Period
+
 class Operation {
 
-    String description
+    String product
+    BigDecimal amount
+    Account account
     OperationType type
-    Account credit
-    Account debit
-    BigDecimal decimal
+    Period period
+    Date date
 
     static constraints = {
-        credit nullable: true
-        debit nullable: true
     }
 }

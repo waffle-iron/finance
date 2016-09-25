@@ -1,7 +1,0 @@
-import finance.Exchange
-
-model {
-    Exchange exchange
-}
-
-json tmpl.exchange(exchange)

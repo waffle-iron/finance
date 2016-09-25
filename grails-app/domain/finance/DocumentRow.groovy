@@ -1,12 +1,12 @@
 package finance
 
-class Balance {
+class DocumentRow {
 
-    Date date
+    String product
     BigDecimal amount
 
     static belongsTo = [
-            account: Account
+            document: Document
     ]
 
     static constraints = {

@@ -1,8 +1,0 @@
-import finance.Expense
-
-model {
-    Iterable<Expense> expenseList
-}
-
-json tmpl.expense(expenseList ?: [])
-

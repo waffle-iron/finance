@@ -1,7 +1,0 @@
-import finance.Income
-
-model {
-    Income income
-}
-
-json tmpl.income(income)

@@ -1,7 +1,0 @@
-import finance.Balance
-
-model {
-    Balance balance
-}
-
-json tmpl.balance(balance)

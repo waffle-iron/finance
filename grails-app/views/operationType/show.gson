@@ -1,7 +1,0 @@
-import finance.OperationType
-
-model {
-    OperationType operationType
-}
-
-json tmpl.operationType(operationType)

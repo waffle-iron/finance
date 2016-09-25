@@ -1,8 +1,0 @@
-import finance.Balance
-
-model {
-    Iterable<Balance> balanceList
-}
-
-json tmpl.balance(balanceList ?: [])
-
