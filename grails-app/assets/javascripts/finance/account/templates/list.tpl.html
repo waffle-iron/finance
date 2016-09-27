@@ -37,92 +37,93 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <!--<tr ng-repeat="account in vm.accountList"-->
-                    <!--ng-click="vm.go('account.show', {id: account.id})">-->
-                    <!--<td>{{account.name}}</td>-->
+                    <tr ng-repeat="account in vm.accountList"
+                        ng-click="vm.go('account.show', {id: account.id})">
+                        <td>{{account.name}}</td>
+                        <td><i class="fa"
+                               ng-class="{'fa-lock': account.closeDate != null, 'fa-unlock':  account.closeDate == null}"
+                               aria-hidden="true"></i></td>
+                    </tr>
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
                     <!--<td>Account #1</td>-->
-                    <!--<td><i class="fa" ng-class="{'fa-lock': account.closeDate != null, 'fa-unlock':  account.closeDate == null}" aria-hidden="true"></i></td>-->
+                    <!--<td><i class="fa fa-lock" aria-hidden="true"></i></td>-->
                     <!--</tr>-->
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #1</td>
-                        <td><i class="fa fa-lock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #2</td>
-                        <td><i class="fa fa-lock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #3</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #4</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #5</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #6</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #7</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #8</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #9</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #10</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #11</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #12</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #13</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #14</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #15</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #16</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #17</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #18</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #19</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr ng-click="vm.go('account.show', {id: ''})">
-                        <td>Account #20</td>
-                        <td><i class="fa fa-unlock" aria-hidden="true"></i></td>
-                    </tr>
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #2</td>-->
+                    <!--<td><i class="fa fa-lock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #3</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #4</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #5</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #6</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #7</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #8</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #9</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #10</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #11</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #12</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #13</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #14</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #15</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #16</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #17</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #18</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #19</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-click="vm.go('account.show', {id: ''})">-->
+                    <!--<td>Account #20</td>-->
+                    <!--<td><i class="fa fa-unlock" aria-hidden="true"></i></td>-->
+                    <!--</tr>-->
                     </tbody>
                 </table>
             </div>

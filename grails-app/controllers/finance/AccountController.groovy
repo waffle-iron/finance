@@ -6,6 +6,8 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class AccountController {
 
+    def accountService
+
     static responseFormats = ['json', 'xml']
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -26,13 +28,15 @@ class AccountController {
             return
         }
 
+        accountService.save account
+
         if (account.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond account.errors, view: 'create'
+            respond account.errors, view: 'create', status: UNPROCESSABLE_ENTITY
             return
         }
 
-        account.save flush: true
+//        account.save flush: true
 
         respond account, [status: CREATED, view: "show"]
     }
@@ -47,7 +51,7 @@ class AccountController {
 
         if (account.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond account.errors, view: 'edit'
+            respond account.errors, view: 'edit', status: UNPROCESSABLE_ENTITY
             return
         }
 
@@ -65,7 +69,15 @@ class AccountController {
             return
         }
 
-        account.delete flush: true
+        accountService.delete account
+
+        if (account.hasErrors()) {
+            transactionStatus.setRollbackOnly()
+            respond account.errors, status: FAILED_DEPENDENCY
+            return
+        }
+
+//        account.delete flush: true
 
         render status: NO_CONTENT
     }
