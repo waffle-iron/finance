@@ -1,29 +1,60 @@
-<div class="panel panel-default">
-    <div class="panel-body">
-        <a ui-sref="index" class="btn btn-default">Home</a>
-        <a ui-sref="account.list" class="btn btn-default">Account List</a>
-        <a ui-sref="account.create" class="btn btn-default">New Account</a>
-    </div>
-</div>
+<div id="show-account" class="container-fluid">
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header hidden-xs">
+                Accounts
+                <small>show</small>
+            </h1>
 
-<div id="show-account">
-    <h1>Show Account</h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-file"></i> <a ui-sref="dashboard">Dashboard</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-file"></i> <a ui-sref="account.list">Accounts</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-file"></i> Show
+                </li>
+            </ol>
+            <!--/.breadcrumb-->
 
-    <dl class="dl-horizontal account">
-        <dt>Name</dt>
-        <dd>{{vm.account.name}}</dd>
-    </dl>
-
-    <form ng-submit="vm.delete()">
-        <fieldset>
-
-        </fieldset>
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <a class="edit btn btn-default" ui-sref="account.edit({id: vm.account.id})">Edit</a>
-                <input class="delete btn btn-danger" type="submit" value="Delete"
-                       onclick="return confirm('Are you sure?');"/>
-            </div>
         </div>
-    </form>
+        <!-- /.col-lg-12 -->
+
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <form ng-submit="vm.delete()">
+                <fieldset>
+                    <div class="form-group required">
+                        <label for="name">Name</label>
+                        <div class="form-control-static" id="name" ng-bind="vm.account.name"></div>
+                    </div>
+                </fieldset>
+                <!--<div class="panel panel-default">-->
+                <!--<div class="panel-body">-->
+                <a class="edit btn btn-default" ui-sref="account.edit({id: vm.account.id})">Edit</a>
+                <button class="delete btn btn-danger" type="submit" onclick="return confirm('Are you sure?');">
+                    Delete
+                </button>
+                <a ui-sref="account.list" class="btn btn-default">Close</a>
+                <!--</div>-->
+                <!-- /.panel-body -->
+
+                <!--</div>-->
+                <!-- /.panel.panel-default -->
+
+            </form>
+
+        </div>
+        <!-- /.col-lg-12 -->
+
+    </div>
+    <!-- /.row -->
+
 </div>
+<!-- /#create-account -->

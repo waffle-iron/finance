@@ -3,7 +3,7 @@ describe('finance.index module', function() {
     beforeEach(angular.mock.module('finance.index', function() {
     }));
 
-    describe("IndexController", function() {
+    describe("DashboardController", function() {
         var controller, deferred, applicationDataFactory, scope;
 
         beforeEach(angular.mock.inject(function($q, $controller, $rootScope) {
@@ -18,7 +18,7 @@ describe('finance.index module', function() {
             spyOn(applicationDataFactory, 'get').and.callThrough();
 
             scope = $rootScope.$new();
-            controller = $controller('IndexController', {$scope: scope, applicationDataFactory: applicationDataFactory, contextPath: "/GrailsApp"});
+            controller = $controller('DashboardController', {$scope: scope, applicationDataFactory: applicationDataFactory, contextPath: "/GrailsApp"});
         }));
 
         beforeEach(function() {

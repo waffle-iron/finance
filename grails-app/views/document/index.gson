@@ -1,0 +1,8 @@
+import finance.Document
+
+model {
+	Iterable<Document> documentList
+}
+
+json tmpl.document(documentList ?: [])
+

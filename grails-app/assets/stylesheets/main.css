@@ -1,0 +1,47 @@
+/* Side Navigation */
+
+@media (min-width: 768px) {
+    .side-nav > li.split-left > a {
+        width: 175px;
+    }
+
+    .side-nav > li.split-right > a {
+        width: 50px;
+        text-align: center;
+    }
+}
+
+.navbar .dropdown-messages,
+.navbar .dropdown-tasks,
+.navbar .dropdown-alerts {
+    width: 310px;
+    min-width: 0;
+}
+
+.navbar .dropdown-messages {
+    margin-left: 5px;
+}
+
+.navbar .dropdown-tasks {
+    margin-left: -10px;
+}
+
+.navbar .dropdown-alerts {
+    margin-left: -70px;
+}
+
+@media (min-width: 768px) {
+    .navbar .dropdown-messages,
+    .navbar .dropdown-tasks,
+    .navbar .dropdown-alerts {
+        margin-left: auto;
+    }
+}
+
+.popover {
+    max-width: 400px;
+}
+
+.popover form.filter {
+    width: 300px;
+}

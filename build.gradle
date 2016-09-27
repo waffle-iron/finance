@@ -97,8 +97,24 @@ clientDependencies {
         'angular-ui-router'('0.2.x', into: 'angular', from: 'release') {
             include 'angular-ui-router.js'
         }
-        'bootstrap'('3.3.x', into: 'bootstrap', from: 'dist/css') {
-            include 'bootstrap.css'
+        'jquery'('2.x.x', into: 'jquery', from: 'dist') {
+            include 'jquery.js'
+        }
+        'bootstrap'('3.3.x', into: 'bootstrap', from: 'dist') {
+            include 'css/bootstrap.css'
+            include 'js/bootstrap.js'
+        }
+        'font-awesome'('4.6.x', into: 'font-awesome') {
+            include 'css/font-awesome.css'
+            include 'fonts/*'
+//            include 'fonts/fontawesome-webfont.eot'
+//            include 'fonts/fontawesome-webfont.svg'
+//            include 'fonts/fontawesome-webfont.ttf'
+//            include 'fonts/fontawesome-webfont.eot'
+//            include 'fonts/fontawesome-webfont.eot'
+//            include 'fonts/fontawesome-webfont.eot'
+//            include 'fonts/fontawesome-webfont.eot'
+//            include 'fonts/fontawesome-webfont.eot'
         }
     }
 }

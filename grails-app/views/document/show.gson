@@ -1,0 +1,7 @@
+import finance.Document
+
+model {
+	Document document
+}
+
+json tmpl.document(document)

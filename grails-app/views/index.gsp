@@ -22,19 +22,23 @@
     <title>Finance</title>
 </head>
 
-<body ng-controller="IndexController as indexCtrl">
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <div ui-view></div>
-        </div>
+<body>
+
+<div id="wrapper">
+
+    <navigation></navigation>
+
+    <div id="page-wrapper" ui-view>
     </div>
+    <!-- /#page-wrapper -->
+
 </div>
+<!-- /#wrapper -->
 
 <div id="spinner" class="spinner" style="display:none;">
     <g:message code="spinner.alt" default="Loading&hellip;"/>
 </div>
 
-<asset:javascript src="/finance/finance.js"/>
+<asset:javascript src="/application.js"/>
 </body>
 </html>

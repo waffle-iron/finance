@@ -1,0 +1,78 @@
+<div id="show-exchange" class="container-fluid">
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header hidden-xs">
+                Exchanges
+                <small>show</small>
+            </h1>
+
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-file"></i> <a ui-sref="dashboard">Dashboard</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-file"></i> <a ui-sref="exchange.list">Exchanges</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-file"></i> Show
+                </li>
+            </ol>
+            <!--/.breadcrumb-->
+
+        </div>
+        <!-- /.col-lg-12 -->
+
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <form ng-submit="vm.delete()">
+                <fieldset class="row">
+                    <div class="form-group col-md-6">
+                        <label for="date">Date</label>
+                        <div id="date" class="form-control-static">{{vm.exchange.date}}</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="amount">Amount</label>
+                        <div id="amount" class="form-control-static">{{vm.exchange.amount}}</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="from">From</label>
+                        <div id="from" class="form-control-static">{{vm.exchange.from}}</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="to">To</label>
+                        <div id="to" class="form-control-static">{{vm.exchange.to}}</div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="description">Description</label>
+                        <div id="description" class="form-control-static">{{vm.exchange.description}}</div>
+                    </div>
+                </fieldset>
+                <!-- /.row -->
+
+                <!--<div class="panel panel-default">-->
+                <!--<div class="panel-body">-->
+                <a class="edit btn btn-default" ui-sref="exchange.edit({id: vm.exchange.id})">Edit</a>
+                <button class="delete btn btn-danger" type="submit" onclick="return confirm('Are you sure?');">
+                    Delete
+                </button>
+                <a ui-sref="exchange.list" class="btn btn-default">Close</a>
+                <!--</div>-->
+                <!-- /.panel-body -->
+
+                <!--</div>-->
+                <!-- /.panel.panel-default -->
+
+            </form>
+
+        </div>
+        <!-- /.col-lg-12 -->
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /#create-exchange -->
