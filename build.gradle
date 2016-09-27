@@ -1,13 +1,12 @@
 buildscript {
     repositories {
-        flatDir name: 'libs', dirs: "$projectDir/libs"
         maven { url "https://repo.grails.org/grails/core" }
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "gradle.plugin.com.craigburke.gradle:karma-gradle:1.4.3"
         classpath "com.craigburke.gradle:client-dependencies:1.1.1"
-        classpath "org.grails.plugins:angular-scaffolding:1.0.0.RC3"
+        classpath "org.grails.plugins:angular-scaffolding:1.0.1"
         classpath "org.grails.plugins:hibernate5:6.0.0.RC1"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.11.1"
         classpath "org.grails.plugins:views-gradle:1.1.0.RC2"
@@ -61,7 +60,7 @@ dependencies {
     compile "org.grails:grails-logging"
     compile "org.grails.plugins:cache"
     compile "org.grails:grails-plugin-gsp"
-    compile "org.grails.plugins:angular-scaffolding:1.0.0.LOCAL-SNAPSHOT"
+    compile "org.grails.plugins:angular-scaffolding:1.0.1"
     compile "org.grails.plugins:hibernate5"
     compile "org.hibernate:hibernate-core:5.1.1.Final"
     compile "org.hibernate:hibernate-ehcache:5.1.1.Final"
