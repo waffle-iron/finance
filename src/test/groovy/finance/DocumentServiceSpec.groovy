@@ -16,6 +16,7 @@ class DocumentServiceSpec extends Specification {
         def incomeDocument = new Document(
                 type: DocumentType.INCOME,
                 account: account,
+                company: 'test company',
                 date: new Date(),
                 amount: 1000.00,
                 description: 'test income'
@@ -26,6 +27,7 @@ class DocumentServiceSpec extends Specification {
         def expenseDocument = new Document(
                 type: DocumentType.EXPENSE,
                 account: account,
+                company: 'test company',
                 date: new Date(),
                 amount: 1000.00,
                 description: 'test expense'
@@ -42,6 +44,7 @@ class DocumentServiceSpec extends Specification {
         def document = new Document(
                 type: DocumentType.INCOME,
                 account: Account.first(),
+                company: 'test company',
                 date: new Date(),
                 description: 'test'
         )
