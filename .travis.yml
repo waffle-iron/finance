@@ -19,4 +19,5 @@ deploy:
     skip_cleanup: true
     script: scp build/libs/finance-0.1.war deployer@serebryanskiy.site:~/tomcat8/finance.war && ./gradlew -b doc.gradle build && scp build/libs/asciidoc.war deployer@serebryanskiy.site:~/tomcat8/finance-documentation.war
     on:
-        branch: master
+        branch: dev
+#        branch: master
