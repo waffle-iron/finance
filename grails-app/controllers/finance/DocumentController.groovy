@@ -10,8 +10,14 @@ class DocumentController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
+        log.error("$params")
         params.max = Math.min(max ?: 10, 100)
-        respond Document.list(params), model:[documentCount: Document.count()]
+//        if (params.type) {
+//            log.error("${DocumentType.valueOf(params.type as String)}")
+//            respond Document.findByType(DocumentType.valueOf(params.type as String), params), model: [documentCount: Document.count()]
+//        } else {
+            respond Document.list(params), model: [documentCount: Document.count()]
+//        }
     }
 
     def show(Document document) {
@@ -28,7 +34,7 @@ class DocumentController {
 
         if (document.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond document.errors, view:'create'
+            respond document.errors, view:'create', status: UNPROCESSABLE_ENTITY
             return
         }
 
@@ -47,7 +53,7 @@ class DocumentController {
 
         if (document.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond document.errors, view:'edit'
+            respond document.errors, view:'edit', status: UNPROCESSABLE_ENTITY
             return
         }
 

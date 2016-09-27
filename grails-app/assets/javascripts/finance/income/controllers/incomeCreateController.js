@@ -4,11 +4,14 @@ angular
     .module("finance.income")
     .controller("IncomeCreateController", IncomeCreateController);
 
-function IncomeCreateController(Income, $state) {
+function IncomeCreateController(Document, Account, $state) {
 
     var vm = this;
 
-    vm.income = new Income();
+    vm.accounts = Account.list();
+
+    vm.income = new Document();
+    vm.income.type = 'INCOME';
 
     vm.saveIncome = function () {
         vm.errors = undefined;

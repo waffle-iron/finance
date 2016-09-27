@@ -3,6 +3,7 @@ package finance
 class Document {
 
     DocumentType type
+    String company
     Account account
     Date date
     BigDecimal amount

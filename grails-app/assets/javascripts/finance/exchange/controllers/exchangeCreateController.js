@@ -4,11 +4,11 @@ angular
     .module("finance.exchange")
     .controller("ExchangeCreateController", ExchangeCreateController);
 
-function ExchangeCreateController(Exchange, $state) {
+function ExchangeCreateController(Document, $state) {
 
     var vm = this;
 
-    vm.exchange = new Exchange();
+    vm.exchange = new Document();
 
     vm.saveExchange = function () {
         vm.errors = undefined;

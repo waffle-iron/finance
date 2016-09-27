@@ -4,11 +4,11 @@ angular
     .module("finance.income")
     .controller("IncomeShowController", IncomeShowController);
 
-function IncomeShowController(Income, $stateParams, $state) {
+function IncomeShowController(Document, $stateParams, $state) {
     var vm = this;
 
-    Income.get({id: $stateParams.id}, function (data) {
-        vm.income = new Income(data);
+    Document.get({id: $stateParams.id}, function (data) {
+        vm.income = new Document(data);
     }, function () {
         $state.go('income.list');
     });

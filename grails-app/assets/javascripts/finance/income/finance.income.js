@@ -3,6 +3,8 @@
 //= require /angular/angular-ui-router
 //= require /angular/angular-resource
 //= require /finance/core/finance.core
+//= require /finance/account/finance.account
+//= require /finance/document/finance.document
 //= require_self
 //= require_tree services
 //= require_tree controllers
@@ -10,7 +12,7 @@
 //= require_tree domain
 //= require_tree templates
 
-angular.module("finance.income", ["ui.router", "ngResource", "finance.core"]).config(config);
+angular.module("finance.income", ["ui.router", "ngResource", "finance.core", "finance.account", "finance.document"]).config(config);
 
 function config($stateProvider) {
     $stateProvider

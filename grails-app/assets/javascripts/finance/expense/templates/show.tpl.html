@@ -32,7 +32,7 @@
                 <fieldset class="row">
                     <div class="form-group col-md-6">
                         <label for="date">Date</label>
-                        <div id="date" class="form-control" ng-bind="vm.expense.date"></div>
+                        <div id="date" class="form-control">{{vm.expense.date | date : 'yyyy-MM-dd'}}</div>
                     </div>
                     <!-- /.form-group.col-md-6 -->
 
@@ -42,11 +42,17 @@
                     </div>
                     <!-- /.form-group.col-md-6 -->
 
-                    <div class="form-group col-md-12">
-                        <label for="from">To</label>
-                        <div id="from" class="form-control" ng-bind="vm.expense.from"></div>
+                    <div class="form-group col-md-6">
+                        <label for="account">Account</label>
+                        <div id="account" class="form-control" ng-bind="vm.expense.account.name"></div>
                     </div>
-                    <!-- /.form-group.col-md-12 -->
+                    <!-- /.form-group.col-md-6 -->
+
+                    <div class="form-group col-md-6">
+                        <label for="company">To company</label>
+                        <div id="company" class="form-control" ng-bind="vm.expense.company"></div>
+                    </div>
+                    <!-- /.form-group.col-md-6 -->
 
                     <div class="form-group col-md-12">
                         <label for="description">Description</label>

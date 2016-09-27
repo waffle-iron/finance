@@ -4,11 +4,11 @@ angular
     .module("finance.expense")
     .controller("ExpenseShowController", ExpenseShowController);
 
-function ExpenseShowController(Expense, $stateParams, $state) {
+function ExpenseShowController(Document, $stateParams, $state) {
     var vm = this;
 
-    Expense.get({id: $stateParams.id}, function (data) {
-        vm.expense = new Expense(data);
+    Document.get({id: $stateParams.id}, function (data) {
+        vm.expense = new Document(data);
     }, function () {
         $state.go('expense.list');
     });

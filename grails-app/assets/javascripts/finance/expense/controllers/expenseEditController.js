@@ -4,12 +4,13 @@ angular
     .module("finance.expense")
     .controller("ExpenseEditController", ExpenseEditController);
 
-function ExpenseEditController(Expense, $stateParams, $state) {
+function ExpenseEditController(Document, Account, $stateParams, $state) {
     var vm = this;
 
+    vm.accounts = Account.list();
 
-    Expense.get({id: $stateParams.id}, function (data) {
-        vm.expense = new Expense(data);
+    Document.get({id: $stateParams.id}, function (data) {
+        vm.expense = new Document(data);
     }, function () {
         vm.errors = [{message: "Could not retrieve expense with ID " + $stateParams.id}];
     });
